@@ -20,8 +20,13 @@ def main():
         selected = tesla.vehicle_list()
 
         for i, product in enumerate(selected):
-            print('product %d:', i)
-            print(product)
+            print('product %d:' % i)
+            product.sync_wake_up()
+            # print(product)
+            # print(product.decode_vin())
+            print(product.get_vehicle_data()) #sync_wake_up is required
+            # print(product.get_vehicle_summary())
+
 
 if __name__ == "__main__":
     main()
